@@ -11,10 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* added to style letters */
-li[disabled] {
-  text-decoration: line-through;
-  opacity: 0.4;
-  pointer-events: none;
-}
