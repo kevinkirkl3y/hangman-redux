@@ -1,17 +1,27 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
+const space = {
+  whiteSpace: 'pre'
+}
 
 function AnswerField(props) {
-  // Variables and Conditions
-  const display = props.answer.split("").map(letter => 
-    props.guess.includes(letter) ? letter : " _ ")
-
+  
+  const display = props.answer.split("").map(letter => {
+    if (letter === " ") {
+      return "   ";
+    } else if (props.guess.includes(letter)) {
+      return letter;
+    } else {
+      return " _ ";
+    }})
+  
   return (
     <>      
-    {/* Conditional variables inside html */}
-      <h3 className="text-center">
+    {console.log(display)}
+    {console.log(display.join(" "))}
+      <h1 className="text-center " style={space}>
         {display.join("")}
-      </h3>
+      </h1>
     </>
   );
 }
