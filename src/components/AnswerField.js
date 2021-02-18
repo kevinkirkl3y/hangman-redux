@@ -1,12 +1,13 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
+
+
 const space = {
   whiteSpace: 'pre'
 }
 
 function AnswerField(props) {
-  
-  const display = props.answer.split("").map(letter => {
+  const currentGuessArray = props.answer.split("").map(letter => {
     if (letter === " ") {
       return "   ";
     } else if (props.guess.includes(letter)) {
@@ -14,13 +15,28 @@ function AnswerField(props) {
     } else {
       return " _ ";
     }})
+
+    
+    // let display = () => {
+    //   if (props.gameStat != true) {
+    //     <>      
+    //       <h1 className="text-center " style={space}>
+    //         {currentGuessArray.join("")}
+    //       </h1>
+    //     </>
+    //   } else if (props.gameStat == true){
+    //     <>
+    //       <GameOver />
+    //     </>
+    //   }
+    // }
+
   
+
   return (
     <>      
-    {console.log(display)}
-    {console.log(display.join(" "))}
       <h1 className="text-center " style={space}>
-        {display.join("")}
+        {currentGuessArray.join("")}
       </h1>
     </>
   );

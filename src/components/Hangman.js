@@ -7,9 +7,12 @@ import step4 from './img/4.jpg';
 import step5 from './img/5.jpg';
 import step6 from './img/6.jpg';
 
-function Hangman() {
+function Hangman(props) {
+  const images = [step0, step1, step2, step3, step4, step5, step6]
+  
   return (
-    <>a
+    <>
+      <img  src={images[props.numOfMistakes]}alt='' />
     </>
   );
 }
